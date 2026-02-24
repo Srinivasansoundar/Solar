@@ -1,0 +1,38 @@
+# Virtual environments
+myenv/
+venv/
+env/
+.venv/
+
+# Saved model files (too large for GitHub)
+saved_models/
+*.pkl
+*.h5
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Data files
+*.csv
+*.xlsx
+*.xls
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+uvicorn.log
