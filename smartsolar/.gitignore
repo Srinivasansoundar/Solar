@@ -1,42 +1,59 @@
-# Virtual environments
+# ── Virtual environments ──────────────────────────────────────────────────────
 myenv/
 venv/
 env/
 .venv/
 
-# Saved model files (too large for GitHub)
+# ── Saved model files (too large for GitHub — download from Google Drive) ─────
 saved_models/
+energy_consumption_saved_models/
+
+# ── Tariff model weights (download from Google Drive) ─────────────────────────
+# Note: lstm_model.py IS tracked; only the large weight file is excluded
+smartsolar/tariff_forcasting_model/tariff_lstm_weights.pth
+tariff_forcasting_model/tariff_lstm_weights.pth
+
+# ── Model file extensions ─────────────────────────────────────────────────────
 *.pkl
 *.h5
-
-#energy_consumption_saved_models/
 *.pt
-*.pkl
+*.pth
 
-# Python cache
+# ── Python cache ──────────────────────────────────────────────────────────────
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .Python
 
-# Jupyter
+# ── Jupyter ───────────────────────────────────────────────────────────────────
 .ipynb_checkpoints/
 *.ipynb
 
-# Data files
+# ── Data files (ignore raw data; keep sample CSVs in frontend/) ──────────────
 *.csv
 *.xlsx
 *.xls
+# Allow sample CSVs used for testing the app
+!smartsolar/frontend/sample_solar.csv
+!smartsolar/frontend/sample_consumption_24h.csv
+!smartsolar/frontend/sample_tariff.csv
+!frontend/sample_solar.csv
+!frontend/sample_consumption_24h.csv
+!frontend/sample_tariff.csv
 
-# OS
+# ── OS ────────────────────────────────────────────────────────────────────────
 .DS_Store
 Thumbs.db
 
-# IDE
+# ── IDE ───────────────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 
-# Logs
+# ── Logs ─────────────────────────────────────────────────────────────────────
 *.log
 uvicorn.log
+
+# ── Temp files ────────────────────────────────────────────────────────────────
+gitstatus.txt
+untracked.txt

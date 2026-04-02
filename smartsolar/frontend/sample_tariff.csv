@@ -1,0 +1,3 @@
+hour,day_of_week,month,temperature,historical_avg_tariff,demand_index
+9,3,4,28,6.5,0.55
+8,5,7,30,4.5,0.1
