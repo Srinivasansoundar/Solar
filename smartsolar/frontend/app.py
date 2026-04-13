@@ -377,9 +377,7 @@ h1, h2, h3 { font-family: 'Syne', sans-serif; }
 """, unsafe_allow_html=True)
 
 # ── Config ────────────────────────────────────────────────────────────────────
-# On Streamlit Cloud: set SMARTSOLAR_API_URL in App Settings → Secrets
-# Locally: defaults to localhost:8000
-API_URL = os.environ.get("SMARTSOLAR_API_URL", "http://localhost:8000").rstrip("/")
+API_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 # ── App Header ────────────────────────────────────────────────────────────────
 st.markdown('<div class="main-title">☀️ SmartSolar Intelligent Energy Decision Engine</div>', unsafe_allow_html=True)
