@@ -4,20 +4,25 @@ venv/
 env/
 .venv/
 
-# ── Saved model files (tracked in Git for deployment) ─────────────────────────
-# saved_models/
-# energy_consumption_saved_models/
+# ── Saved model files (too large for GitHub — download from Google Drive) ─────
+saved_models/
+energy_consumption_saved_models/
 
-# ── Tariff model weights (download from Google Drive) ─────────────────────────
-# Note: lstm_model.py IS tracked; only the large weight file is excluded
-smartsolar/tariff_forcasting_model/tariff_lstm_weights.pth
-tariff_forcasting_model/tariff_lstm_weights.pth
+# ── Tariff model weights ──────────────────────────────────────────────────────
+# tariff_lstm_weights.pth (~2MB) is committed to Git so the Streamlit frontend
+# can access it. The force-include rules appear AFTER *.pth below.
 
 # ── Model file extensions ─────────────────────────────────────────────────────
 *.pkl
 *.h5
 *.pt
 *.pth
+# Force-include the tariff weights (small enough to track in Git)
+!smartsolar/tariff_forcasting_model/tariff_lstm_weights.pth
+!tariff_forcasting_model/tariff_lstm_weights.pth
+
+# ── Streamlit secrets (never commit) ──────────────────────────────────────────
+.streamlit/secrets.toml
 
 # ── Python cache ──────────────────────────────────────────────────────────────
 __pycache__/

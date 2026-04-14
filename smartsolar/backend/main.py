@@ -17,13 +17,9 @@ warnings.filterwarnings('ignore')
 
 app = FastAPI(title="Solar Energy Forecasting API", version="1.0.0")
 
-# ── Middleware ───────────────────────────────────────────────────────────────
-# Get frontend URL from environment (default to localhost for dev)
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:8501")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL, "http://localhost:8501", "https://smartsolar-frontend.onrender.com"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )

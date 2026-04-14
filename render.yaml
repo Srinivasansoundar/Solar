@@ -1,30 +1,11 @@
 services:
-  # ----------------------------------------------------------------------------
-  # 1. FastAPI Backend (Solar + Energy Models)
-  # ----------------------------------------------------------------------------
   - type: web
     name: smartsolar-backend
-    env: python
+    runtime: python
+    plan: free
     rootDir: smartsolar/backend
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install -r requirements.txt && python download_models.py
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.12
-      - key: FRONTEND_URL
-        value: https://smartsolar-frontend.onrender.com # Placeholder, will be updated by Render
-
-  # ----------------------------------------------------------------------------
-  # 2. Streamlit Frontend
-  # ----------------------------------------------------------------------------
-  - type: web
-    name: smartsolar-frontend
-    env: python
-    rootDir: smartsolar/frontend
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.10.12
-      - key: BACKEND_URL
-        value: https://smartsolar-backend.onrender.com # Update this if your backend name differs
+        value: "3.10.12"
